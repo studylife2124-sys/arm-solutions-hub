@@ -27,8 +27,8 @@ const AboutSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-card border border-border rounded-xl p-8 shadow-md">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-md text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4 mx-auto">
               <Target className="text-primary" size={28} />
             </div>
             <h3 className="font-heading font-bold text-xl text-foreground mb-3">Misión</h3>
@@ -36,8 +36,8 @@ const AboutSection = () => {
               Ofrecer soluciones integrales en servicios vehiculares e industriales, garantizando calidad, seguridad y eficiencia en cada proyecto, con un enfoque profesional y orientado a resultados.
             </p>
           </div>
-          <div className="bg-card border border-border rounded-xl p-8 shadow-md">
-            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+          <div className="bg-card border border-border rounded-xl p-8 shadow-md text-center">
+            <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4 mx-auto">
               <Rocket className="text-primary" size={28} />
             </div>
             <h3 className="font-heading font-bold text-xl text-foreground mb-3">Visión</h3>
