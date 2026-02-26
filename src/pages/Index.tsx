@@ -1,4 +1,4 @@
-import { Car, Building2 } from "lucide-react";
+import { Car, Building2, Factory } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServiceSection from "@/components/ServiceSection";
@@ -10,14 +10,23 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 import windshieldCar from "@/assets/windshield-car.png";
+import heavyWindshieldInstall from "@/assets/heavy-windshield-install.png";
 import carMaintenance from "@/assets/car-maintenance.png";
+import heavyMaintenance from "@/assets/heavy-maintenance.png";
 import acMaintenance from "@/assets/ac-maintenance.png";
 import tapiceria from "@/assets/tapiceria.png";
 import carWash from "@/assets/car-wash.png";
 import polarizado from "@/assets/polarizado.png";
 import carPainting from "@/assets/car-painting.png";
+
 import glassInstall from "@/assets/glass-install.png";
-import welding from "@/assets/welding.png";
+import electricalBuilding from "@/assets/electrical-building.png";
+import glassCleaning from "@/assets/glass-cleaning.png";
+import facadePainting from "@/assets/facade-painting.png";
+import polarizadoVentanas from "@/assets/polarizado-ventanas.png";
+
+import industrialMaintenance from "@/assets/industrial-maintenance.png";
+import industrialWelding from "@/assets/industrial-welding.png";
 
 const Index = () => {
   return (
@@ -33,12 +42,12 @@ const Index = () => {
         icon={<Car size={28} />}
       >
         <ServiceCard
-          image={windshieldCar}
+          image={[windshieldCar, heavyWindshieldInstall]}
           title="Instalación y Cambio de Parabrisas"
           description="Instalación profesional de parabrisas para vehículos livianos, pesados y maquinaria industrial con materiales de primera calidad y garantía."
         />
         <ServiceCard
-          image={carMaintenance}
+          image={[carMaintenance, heavyMaintenance]}
           title="Mantenimiento Preventivo y Correctivo"
           description="Servicio completo de mantenimiento para vehículos livianos y pesados. Diagnóstico, reparación y repuestos originales."
         />
@@ -83,9 +92,43 @@ const Index = () => {
           description="Vidrios templados, laminados y a medida para ventanas, puertas y fachadas de edificios, casas y oficinas."
         />
         <ServiceCard
-          image={welding}
+          image={electricalBuilding}
           title="Instalación y Mantenimiento Eléctrico"
           description="Servicio profesional de instalación y mantenimiento eléctrico para edificios, casas y oficinas. Seguridad y calidad garantizada."
+        />
+        <ServiceCard
+          image={glassCleaning}
+          title="Limpieza de Vidrios"
+          description="Limpieza profesional de vidrios para edificaciones, casas y oficinas. Equipos especializados y personal capacitado en trabajo en altura."
+        />
+        <ServiceCard
+          image={facadePainting}
+          title="Pintado de Fachada Exterior e Interior"
+          description="Servicio de pintura profesional para fachadas exteriores e interiores de edificios, casas y oficinas. Acabados de alta calidad y durabilidad."
+        />
+        <ServiceCard
+          image={polarizadoVentanas}
+          title="Instalación de Lámina Polarizada"
+          description="Instalación de láminas polarizadas en ventanas, mamparas y superficies de vidrio para protección solar, privacidad y ahorro energético."
+        />
+      </ServiceSection>
+
+      {/* SERVICIOS INDUSTRIALES */}
+      <ServiceSection
+        id="industriales"
+        title="Servicios Industriales"
+        subtitle="Mantenimiento, reparación y suministro para maquinaria industrial y equipos pesados, con personal técnico especializado y cumplimiento de estándares de seguridad."
+        icon={<Factory size={28} />}
+      >
+        <ServiceCard
+          image={industrialMaintenance}
+          title="Mantenimiento y Reparación de Equipos Industriales"
+          description="Servicio integral de mantenimiento preventivo y correctivo para maquinaria industrial y equipos pesados. Diagnóstico especializado y repuestos de calidad."
+        />
+        <ServiceCard
+          image={industrialWelding}
+          title="Soldadura y Fabricación Industrial"
+          description="Servicios de soldadura profesional, fabricación y reparación de estructuras metálicas para el sector industrial. Personal certificado y equipos de alta tecnología."
         />
       </ServiceSection>
 
