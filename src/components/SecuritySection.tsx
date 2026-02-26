@@ -1,12 +1,12 @@
-import { ShieldCheck, HardHat, FileCheck, MapPin, ClipboardCheck } from "lucide-react";
+import { ShieldCheck, HardHat, FileCheck, ClipboardCheck, HeartPulse } from "lucide-react";
 import safetyImg from "@/assets/safety-compliance.png";
 
 const items = [
   { icon: HardHat, label: "Personal con EPP completo" },
   { icon: ClipboardCheck, label: "IPERC implementado" },
   { icon: ShieldCheck, label: "SCTR vigente" },
+  { icon: HeartPulse, label: "Exámenes Médicos Ocupacionales (EMO)" },
   { icon: FileCheck, label: "Trabajo bajo estándares de seguridad" },
-  { icon: MapPin, label: "Atención en zonas industriales y portuarias" },
 ];
 
 const SecuritySection = () => {
