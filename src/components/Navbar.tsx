@@ -6,6 +6,7 @@ const navLinks = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios Vehiculares", href: "#vehiculares" },
   { label: "Edificaciones", href: "#edificaciones" },
+  { label: "Industriales", href: "#industriales" },
   { label: "Nosotros", href: "#nosotros" },
   { label: "Seguridad", href: "#seguridad" },
   { label: "Contacto", href: "#contacto" },
