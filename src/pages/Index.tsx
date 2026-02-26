@@ -27,6 +27,7 @@ import polarizadoVentanas from "@/assets/polarizado-ventanas.png";
 
 import industrialMaintenance from "@/assets/industrial-maintenance.png";
 import industrialWelding from "@/assets/industrial-welding.png";
+import industrialParts from "@/assets/industrial-parts.png";
 
 const Index = () => {
   return (
@@ -129,6 +130,11 @@ const Index = () => {
           image={industrialWelding}
           title="Soldadura y Fabricación Industrial"
           description="Servicios de soldadura profesional, fabricación y reparación de estructuras metálicas para el sector industrial. Personal certificado y equipos de alta tecnología."
+        />
+        <ServiceCard
+          image={industrialParts}
+          title="Suministro e Instalación de Piezas Industriales"
+          description="Suministro e instalación de piezas y componentes industriales a medida. Repuestos originales y adaptados para maquinaria pesada y equipos especializados."
         />
       </ServiceSection>
 
