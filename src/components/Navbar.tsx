@@ -1,12 +1,13 @@
 import { useState } from "react";
-import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import armLogo from "@/assets/arm-logo.png";
 
 const navLinks = [
   { label: "Inicio", href: "#inicio" },
-  { label: "Edificios", href: "#edificios" },
-  { label: "Vehículos", href: "#vehiculos" },
-  { label: "Maquinaria", href: "#maquinaria" },
+  { label: "Servicios Vehiculares", href: "#vehiculares" },
+  { label: "Edificaciones", href: "#edificaciones" },
+  { label: "Nosotros", href: "#nosotros" },
+  { label: "Seguridad", href: "#seguridad" },
   { label: "Contacto", href: "#contacto" },
 ];
 
@@ -19,7 +20,7 @@ const Navbar = () => {
         <a href="#inicio">
           <img src={armLogo} alt="ARM Integral Group" className="h-12 object-contain" />
         </a>
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-6">
           {navLinks.map((l) => (
             <li key={l.href}>
               <a
@@ -33,14 +34,14 @@ const Navbar = () => {
         </ul>
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-primary-foreground"
+          className="lg:hidden text-primary-foreground"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-arm-dark border-t border-primary/20 pb-4">
+        <div className="lg:hidden bg-arm-dark border-t border-primary/20 pb-4">
           {navLinks.map((l) => (
             <a
               key={l.href}
