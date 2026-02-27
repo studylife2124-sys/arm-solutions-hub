@@ -1,6 +1,39 @@
+import { useState } from "react";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      toast({ title: "Campos obligatorios", description: "Completa nombre, correo y mensaje.", variant: "destructive" });
+      return;
+    }
+    setLoading(true);
+    try {
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: form,
+      });
+      if (error) throw error;
+      toast({ title: "¡Mensaje enviado!", description: "Nos pondremos en contacto contigo pronto." });
+      setForm({ name: "", email: "", phone: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Error", description: "No se pudo enviar el mensaje. Intenta de nuevo.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contacto" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -51,25 +84,25 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-4 bg-card border border-border rounded-xl p-8 shadow-md" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4 bg-card border border-border rounded-xl p-8 shadow-md" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-heading font-semibold text-foreground mb-1">Nombre completo</label>
-              <input type="text" className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tu nombre" />
+              <input type="text" name="name" value={form.name} onChange={handleChange} className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="Tu nombre" />
             </div>
             <div>
               <label className="block text-sm font-heading font-semibold text-foreground mb-1">Correo electrónico</label>
-              <input type="email" className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="correo@ejemplo.com" />
+              <input type="email" name="email" value={form.email} onChange={handleChange} className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="correo@ejemplo.com" />
             </div>
             <div>
               <label className="block text-sm font-heading font-semibold text-foreground mb-1">Teléfono</label>
-              <input type="tel" className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="+51 999 999 999" />
+              <input type="tel" name="phone" value={form.phone} onChange={handleChange} className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring" placeholder="+51 999 999 999" />
             </div>
             <div>
               <label className="block text-sm font-heading font-semibold text-foreground mb-1">Mensaje</label>
-              <textarea rows={4} className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none" placeholder="Describe el servicio que necesitas..." />
+              <textarea name="message" value={form.message} onChange={handleChange} rows={4} className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none" placeholder="Describe el servicio que necesitas..." />
             </div>
-            <button type="submit" className="w-full bg-primary hover:bg-accent text-primary-foreground font-heading font-bold py-3 rounded-lg transition-colors text-sm tracking-wide">
-              Enviar Mensaje
+            <button type="submit" disabled={loading} className="w-full bg-primary hover:bg-accent text-primary-foreground font-heading font-bold py-3 rounded-lg transition-colors text-sm tracking-wide disabled:opacity-50">
+              {loading ? "Enviando..." : "Enviar Mensaje"}
             </button>
           </form>
         </div>
