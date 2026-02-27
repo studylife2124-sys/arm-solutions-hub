@@ -33,7 +33,7 @@ Deno.serve(async (req) => {
       body: JSON.stringify({
         from: "Formulario Web <onboarding@resend.dev>",
         to: ["ventas@armintegralgroup.com.pe"],
-        subject: `Nuevo mensaje de contacto - ${name}`,
+        subject: `Cotización web - ${name}`,
         html: `
           <h2>Nuevo mensaje desde el formulario web</h2>
           <p><strong>Nombre:</strong> ${name}</p>
