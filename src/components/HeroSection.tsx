@@ -29,7 +29,7 @@ const HeroSection = () => {
               <FileText size={18} /> Solicitar Cotización
             </a>
             <a
-              href="https://wa.me/51965367342"
+              href="https://wa.me/51955367342"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-primary-foreground font-heading font-bold px-8 py-4 rounded-lg transition-colors text-sm tracking-wide"
