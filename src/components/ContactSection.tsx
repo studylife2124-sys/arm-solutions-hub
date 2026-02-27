@@ -102,7 +102,7 @@ const ContactSection = () => {
               <textarea name="message" value={form.message} onChange={handleChange} rows={4} className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm font-body text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none" placeholder="Describe el servicio que necesitas..." />
             </div>
             <button type="submit" disabled={loading} className="w-full bg-primary hover:bg-accent text-primary-foreground font-heading font-bold py-3 rounded-lg transition-colors text-sm tracking-wide disabled:opacity-50">
-              {loading ? "Enviando..." : "Enviar Mensaje"}
+              {loading ? "Enviando..." : "Enviar Correo"}
             </button>
           </form>
         </div>
