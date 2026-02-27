@@ -25,7 +25,7 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-primary-foreground mb-4">Contacto</h4>
             <ul className="space-y-3 text-sm">
-              <li className="flex items-center gap-2"><MessageCircle size={16} className="text-primary" /> +51 965 367 342</li>
+              <li className="flex items-center gap-2"><MessageCircle size={16} className="text-primary" /> +51 955 367 342</li>
               <li className="flex items-center gap-2"><Mail size={16} className="text-primary" /> ventas@armintegralgroup.com.pe</li>
               <li className="flex items-center gap-2"><MapPin size={16} className="text-primary" /> Lima, Perú</li>
             </ul>

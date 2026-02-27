@@ -67,8 +67,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <p className="text-sm text-muted-foreground font-body">WhatsApp</p>
-                <a href="https://wa.me/51965367342?text=Hola%2C%20quisiera%20realizar%20una%20cotizaci%C3%B3n%20por%20favor." target="_blank" rel="noopener noreferrer" className="text-foreground font-heading font-semibold hover:text-primary transition-colors">
-                  +51 965 367 342
+                <a href="https://wa.me/51955367342?text=Hola%2C%20quisiera%20realizar%20una%20cotizaci%C3%B3n%20por%20favor." target="_blank" rel="noopener noreferrer" className="text-foreground font-heading font-semibold hover:text-primary transition-colors">
+                  +51 955 367 342
                 </a>
               </div>
             </div>
