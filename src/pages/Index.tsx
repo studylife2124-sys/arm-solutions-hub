@@ -128,7 +128,7 @@ const Index = () => {
         />
         <ServiceCard
           image={industrialWelding}
-          title="Soldadura y Fabricación Industrial"
+          title="Soldadura Industrial"
           description="Servicios de soldadura profesional, fabricación y reparación de estructuras metálicas para el sector industrial. Personal certificado y equipos de alta tecnología."
         />
         <ServiceCard
