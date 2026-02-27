@@ -34,7 +34,7 @@ const ServiceSection = ({ id, title, subtitle, icon, children, dark }: ServiceSe
         </div>
         <div className="flex justify-center mt-10">
           <a
-            href={`https://wa.me/51965367342?text=${encodeURIComponent(`Hola, deseo más información sobre los servicios ${title}.`)}`}
+            href={`https://wa.me/51965367342?text=${encodeURIComponent(`Hola, deseo más información sobre los ${title.toLowerCase()}.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-semibold px-6 py-3 rounded-lg shadow-md hover:shadow-lg transition-all hover:scale-105"
