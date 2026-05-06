@@ -1,4 +1,4 @@
-import { Car, Building2, Factory } from "lucide-react";
+import { Car, Building2, Factory, Package } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServiceSection from "@/components/ServiceSection";
@@ -28,6 +28,7 @@ import polarizadoVentanas from "@/assets/polarizado-ventanas.png";
 import industrialMaintenance from "@/assets/industrial-maintenance.png";
 import industrialWelding from "@/assets/industrial-welding.png";
 import industrialParts from "@/assets/industrial-parts.png";
+import cleaningSupplies from "@/assets/cleaning-supplies.jpg";
 
 const Index = () => {
   return (
