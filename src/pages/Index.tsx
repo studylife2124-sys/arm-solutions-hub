@@ -1,4 +1,4 @@
-import { Car, Building2, Factory } from "lucide-react";
+import { Car, Building2, Factory, Package } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ServiceSection from "@/components/ServiceSection";
@@ -28,6 +28,7 @@ import polarizadoVentanas from "@/assets/polarizado-ventanas.png";
 import industrialMaintenance from "@/assets/industrial-maintenance.png";
 import industrialWelding from "@/assets/industrial-welding.png";
 import industrialParts from "@/assets/industrial-parts.png";
+import cleaningSupplies from "@/assets/cleaning-supplies.jpg";
 
 const Index = () => {
   return (
@@ -135,6 +136,21 @@ const Index = () => {
           image={industrialParts}
           title="Suministro e Instalación de Piezas Industriales"
           description="Suministro e instalación de piezas y componentes industriales a medida. Repuestos originales y adaptados para maquinaria pesada y equipos especializados."
+        />
+      </ServiceSection>
+
+      {/* VENTA DE SUMINISTROS */}
+      <ServiceSection
+        id="suministros"
+        title="Venta de Suministros"
+        subtitle="Comercializamos suministros y materiales de calidad para mantener la limpieza, higiene y operatividad de instalaciones industriales y comerciales."
+        icon={<Package size={28} />}
+        dark
+      >
+        <ServiceCard
+          image={cleaningSupplies}
+          title="Venta de Materiales de Limpieza Industrial"
+          description="Distribución de productos y materiales de limpieza industrial: detergentes, desinfectantes, equipos y accesorios para el mantenimiento integral de plantas, oficinas y almacenes."
         />
       </ServiceSection>
 
