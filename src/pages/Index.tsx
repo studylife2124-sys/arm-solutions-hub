@@ -139,6 +139,21 @@ const Index = () => {
         />
       </ServiceSection>
 
+      {/* VENTA DE SUMINISTROS */}
+      <ServiceSection
+        id="suministros"
+        title="Venta de Suministros"
+        subtitle="Comercializamos suministros y materiales de calidad para mantener la limpieza, higiene y operatividad de instalaciones industriales y comerciales."
+        icon={<Package size={28} />}
+        dark
+      >
+        <ServiceCard
+          image={cleaningSupplies}
+          title="Venta de Materiales de Limpieza Industrial"
+          description="Distribución de productos y materiales de limpieza industrial: detergentes, desinfectantes, equipos y accesorios para el mantenimiento integral de plantas, oficinas y almacenes."
+        />
+      </ServiceSection>
+
       <AboutSection />
       <SecuritySection />
       <ContactSection />
